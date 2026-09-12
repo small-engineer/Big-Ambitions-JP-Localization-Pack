@@ -7,6 +7,7 @@ Big Ambitions の複数 Mod を対象にした、日本語翻訳パックの雛�
 ```text
 Big-Ambitions-JP-Localization-Pack/
 ├── Makefile                      # 同期・ビルド・配布物作成
+├── thumbnail.png                 # Steam Workshop プレビュー画像
 ├── Locales/
 │   └── ja.json              # ゲームへ配布する生成物
 ├── Translations/
@@ -103,6 +104,7 @@ dotnet build src/BigAmbitions.JpLocalizationPack \
 ```text
 BigAmbitionsJapanesePack/
 ├── BigAmbitions.JpLocalizationPack.dll
+├── thumbnail.png
 └── Locales/
     └── ja.json
 ```
@@ -114,7 +116,8 @@ Localization Key は全 Mod で共有され、同じキーはロード順が後�
 ## Steam Workshop の自動更新
 
 GitHub Release を公開すると、`.github/workflows/release.yml` がリリースに添付した
-`BigAmbitions.JpLocalizationPack.dll` と、リリース対象の `Locales/ja.json` を
+`BigAmbitions.JpLocalizationPack.dll`、リリース対象の `Locales/ja.json`、
+`thumbnail.png` を
 既存の Steam Workshop アイテムへアップロードします。ドラフトを保存しただけでは実行されません。
 
 初回公開だけは Big Ambitions の `Mods > Mod Creator` から手動で行い、以下を
@@ -147,5 +150,5 @@ gh release create v0.1.0 \
 
 `config.vdf` はログイン情報を含むため、リポジトリへコミットしないでください。
 認証エラーになった場合は同じ Steam アカウントで SteamCMD に再ログインし、
-Secret を更新してください。ワークフローはタイトル・説明・サムネイルを変更せず、
-配布ファイルと Change Notes のリリースタグだけを更新します。
+Secret を更新してください。ワークフローはタイトルと説明を変更せず、
+配布ファイル、プレビュー画像、Change Notes のリリースタグを更新します。

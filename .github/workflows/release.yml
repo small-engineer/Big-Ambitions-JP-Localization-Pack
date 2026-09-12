@@ -34,6 +34,7 @@ jobs:
             --pattern BigAmbitions.JpLocalizationPack.dll \
             --dir "$RUNNER_TEMP/workshop-content"
           cp Locales/ja.json "$RUNNER_TEMP/workshop-content/Locales/ja.json"
+          cp thumbnail.png "$RUNNER_TEMP/workshop-content/thumbnail.png"
 
       - name: Set up SteamCMD
         id: steamcmd
@@ -76,6 +77,7 @@ jobs:
             "  \"appid\" \"$APP_ID\"" \
             "  \"publishedfileid\" \"$WORKSHOP_ITEM_ID\"" \
             "  \"contentfolder\" \"$RUNNER_TEMP/workshop-content\"" \
+            "  \"previewfile\" \"$RUNNER_TEMP/workshop-content/thumbnail.png\"" \
             "  \"changenote\" \"GitHub Release $change_note\"" \
             '}' > "$RUNNER_TEMP/workshop.vdf"
 

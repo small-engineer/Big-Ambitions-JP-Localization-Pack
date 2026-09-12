@@ -23,8 +23,11 @@ package: locales dll
 	mkdir -p "$(PACK_DIR)/Locales"
 	cp "$(DLL)" "$(PACK_DIR)/BigAmbitions.JpLocalizationPack.dll"
 	cp Locales/ja.json "$(PACK_DIR)/Locales/ja.json"
+	cp thumbnail.png "$(PACK_DIR)/thumbnail.png"
 
 check:
 	$(PYTHON) -B sync_workshop.py --workshop-dir "$(WORKSHOP_DIR)" --check
 	$(PYTHON) -B build.py --check
 	dotnet build "$(PROJECT)" -c Release --no-restore "-p:BigAmbitionsManagedDir=$(MANAGED_DIR)"
+	test -f thumbnail.png
+	test "$$(wc -c < thumbnail.png)" -le 1000000
