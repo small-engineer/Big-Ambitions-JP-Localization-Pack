@@ -133,6 +133,7 @@ GitHub の `Settings > Secrets and variables > Actions` に登録してくださ
 | --- | --- | --- |
 | Variable | `STEAM_WORKSHOP_ITEM_ID` | Workshop URL の `id` にある数字 |
 | Secret | `STEAM_USERNAME` | Workshop アイテムを所有する Steam アカウント名 |
+| Secret | `STEAM_PASSWORD` | Steam アカウントのパスワード |
 | Secret | `STEAM_CONFIG_VDF` | SteamCMD で認証済みの `config.vdf` を Base64 化した値 |
 
 macOS で `STEAM_CONFIG_VDF` 用の値をクリップボードへコピーする例です。
@@ -154,7 +155,8 @@ gh release create v0.1.0 \
   --generate-notes
 ```
 
-`config.vdf` はログイン情報を含むため、リポジトリへコミットしないでください。
-認証エラーになった場合は同じ Steam アカウントで SteamCMD に再ログインし、
-Secret を更新してください。ワークフローはタイトルと説明を変更せず、
+`config.vdf` とパスワードはログイン情報を含むため、リポジトリへコミットしないでください。
+ワークフローはパスワードで毎回ログインし、`config.vdf` を Steam Guard の端末認証に使います。
+Steam Guard の再承認を求められた場合は同じ Steam アカウントで SteamCMD に再ログインし、
+`STEAM_CONFIG_VDF` を更新してください。ワークフローはタイトルと説明を変更せず、
 配布ファイル、プレビュー画像、Change Notes のリリースタグを更新します。
