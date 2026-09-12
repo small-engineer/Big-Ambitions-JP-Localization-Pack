@@ -9,6 +9,7 @@
     {
       "name": "IT Services",
       "workshopItemId": "3741969623",
+      "translationFile": "it-services.json",
       "details": "事業タイプ、スキル、サーバー設備、料金、通知、ヘルプを日本語化します。",
       "dependencies": [
         {
@@ -20,7 +21,84 @@
     {
       "name": "BizSuite",
       "workshopItemId": "3739934517",
+      "translationFile": "bizsuite.json",
       "details": "ノート、カレンダー、表計算、通知、設定、ヘルプを日本語化します。"
+    },
+    {
+      "name": "8200 - OSINT Service / OSINTサービス",
+      "workshopItemId": "3800064885",
+      "translationFile": "unit-8200.json",
+      "details": "OSINTサービス事業、ハッカー、サーバー基盤、料金、ゲーム内ヘルプを日本語化します。",
+      "dependencies": [
+        {
+          "name": "IT Services",
+          "workshopItemId": "3741969623"
+        },
+        {
+          "name": "SkillKit",
+          "workshopItemId": "3795855100"
+        }
+      ]
+    },
+    {
+      "name": "Server BRANDS",
+      "workshopItemId": "3800081280",
+      "translationFile": "server-rack.json",
+      "details": "サーバーラック、サーバー機器、ネットワーク機器、設備要件を日本語化します。",
+      "dependencies": [
+        {
+          "name": "IT Services",
+          "workshopItemId": "3741969623"
+        }
+      ]
+    },
+    {
+      "name": "Aluna's Trainer",
+      "workshopItemId": "3739103628",
+      "translationFile": "alunatrainer.json",
+      "details": "確認画面と操作結果の通知を日本語化します。"
+    },
+    {
+      "name": "Auto Price Maximizer - 1.0 Compatible",
+      "workshopItemId": "3791292164",
+      "translationFile": "autopricemaximizernative.json",
+      "details": "自動価格設定のオプションと操作項目を日本語化します。",
+      "dependencies": [
+        {
+          "name": "LIB BA Unified UI",
+          "workshopItemId": "3790426259"
+        }
+      ]
+    },
+    {
+      "name": "Example - Furniture",
+      "workshopItemId": "3720916716",
+      "translationFile": "example-furniture.json",
+      "details": "追加家具の名称を日本語化します。"
+    },
+    {
+      "name": "GAGAZON",
+      "workshopItemId": "3772394068",
+      "translationFile": "gagazon.json",
+      "details": "オンライン市場の商品検索、カート、配送、定期注文画面を日本語化します。",
+      "dependencies": [
+        {
+          "name": "LIB BA Unified UI",
+          "workshopItemId": "3790426259"
+        }
+      ]
+    },
+    {
+      "name": "Smart Recruiting",
+      "workshopItemId": "3795832653",
+      "translationFile": "smartrecruiting.json",
+      "details": "採用アドバイス、スマート採用、設定、通知、ヘルプを日本語化します。"
+    },
+    {
+      "name": "Storefront Sign Display Logo",
+      "workshopItemId": "3797153310",
+      "translationFile": "storefrontsigndisplay.json",
+      "details": "店頭看板の表示設定を日本語化します。"
     }
   ],
   "usage": [

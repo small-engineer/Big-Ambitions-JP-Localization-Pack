@@ -11,7 +11,7 @@ Big-Ambitions-JP-Localization-Pack/
 ├── Locales/
 │   └── ja.json              # ゲームへ配布する生成物
 ├── Translations/
-│   └── it-services.json     # Mod ごとの翻訳元
+│   └── <mod>.json           # Mod ごとの翻訳元
 ├── src/
 │   └── BigAmbitions.JpLocalizationPack/
 │       ├── BigAmbitions.JpLocalizationPack.csproj
@@ -60,7 +60,7 @@ make WORKSHOP_DIR="/path/to/workshop/content/1331550" \
 make check
 ```
 
-Steam の説明文と対応 Mod 一覧は `workshop/metadata.json` で管理します。`make workshop` で `workshop/description.txt` を生成し、Release workflow が同じ定義からタイトル・説明文を公開します。
+Steam の説明文と対応 Mod 一覧は `workshop/metadata.json` で管理します。各 Mod の `translationFile` は `Translations/` と照合されるため、一覧の追加漏れも `make check` で検出できます。`make workshop` で `workshop/description.txt` を生成し、Release workflow が同じ定義からタイトル・説明文を公開します。
 
 ## 翻訳を追加する
 
@@ -158,5 +158,6 @@ gh release create v0.1.0 \
 `config.vdf` とパスワードはログイン情報を含むため、リポジトリへコミットしないでください。
 ワークフローはパスワードで毎回ログインし、`config.vdf` を Steam Guard の端末認証に使います。
 Steam Guard の再承認を求められた場合は同じ Steam アカウントで SteamCMD に再ログインし、
-`STEAM_CONFIG_VDF` を更新してください。ワークフローはタイトルと説明を変更せず、
-配布ファイル、プレビュー画像、Change Notes のリリースタグを更新します。
+`STEAM_CONFIG_VDF` を更新してください。ワークフローは `workshop/metadata.json` から
+タイトル、説明、対応 Mod 一覧を生成し、配布ファイル、プレビュー画像、
+Change Notes のリリースタグと一緒に更新します。

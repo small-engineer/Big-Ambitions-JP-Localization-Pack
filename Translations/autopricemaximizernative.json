@@ -1,0 +1,15 @@
+{
+  "autopricemaximizer_apply_daily": "ゲーム内で毎日価格を再評価する",
+  "autopricemaximizer_apply_now": "今すぐ価格を適用",
+  "autopricemaximizer_audit": "価格監査CSVを出力する",
+  "autopricemaximizer_cents_value": "{value}セント",
+  "autopricemaximizer_dry_run": "ドライラン（価格を変更せず監査）",
+  "autopricemaximizer_enabled": "自動価格設定を有効にする",
+  "autopricemaximizer_open_dashboard": "価格設定ダッシュボードを開く",
+  "autopricemaximizer_open_dashboard_shortcut": "価格設定ダッシュボードのショートカット",
+  "autopricemaximizer_options_header": "自動価格最大化",
+  "autopricemaximizer_reload_ui_shortcut": "価格設定画面を再読み込みするショートカット",
+  "autopricemaximizer_safety_cents": "安全マージン",
+  "autopricemaximizer_undo": "直前の価格一括変更を元に戻す",
+  "autopricemaximizer_verbose": "商品ごとの詳細ログを出力する"
+}

@@ -21,6 +21,22 @@ def load_metadata() -> dict:
             raise ValueError(f"workshop/metadata.json is missing {key!r}")
     if not str(metadata["appId"]).isdigit():
         raise ValueError("appId must be numeric")
+
+    listed_files = [mod.get("translationFile") for mod in metadata["supportedMods"]]
+    if any(not isinstance(name, str) or not name for name in listed_files):
+        raise ValueError("each supported mod must define translationFile")
+    if len(listed_files) != len(set(listed_files)):
+        raise ValueError("supported mod translationFile values must be unique")
+    translation_files = {
+        path.name for path in (ROOT / "Translations").glob("*.json")
+    }
+    if set(listed_files) != translation_files:
+        missing = sorted(translation_files - set(listed_files))
+        stale = sorted(set(listed_files) - translation_files)
+        raise ValueError(
+            "supported mod list differs from Translations "
+            f"(missing={missing}, stale={stale})"
+        )
     return metadata
 
 

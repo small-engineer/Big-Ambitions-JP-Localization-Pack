@@ -1,0 +1,15 @@
+{
+  "server-rack:businessrequirement_router": "ルーター（最低1台）",
+  "server-rack:businessrequirement_switch": "スイッチ（サーバー8台ごとに1台）",
+  "server-rack:businessrequirement_ups": "UPS容量（総設備負荷2,700Wごとに1台）",
+  "server-rack:businessrequirement_utm": "UTM（最低1台）",
+  "server-rack:itemname_bell_server": "Dell PowerEdge R760",
+  "server-rack:itemname_empty_rack": "12U オープンサーバーラック",
+  "server-rack:itemname_hbe_server": "HPE ProLiant DL380 Gen12",
+  "server-rack:itemname_ibn_server": "IBM Power S1022",
+  "server-rack:itemname_onrom_bu3002r": "OMRON BU3002R ラックUPS",
+  "server-rack:itemname_sisco_c9300": "Cisco Catalyst C9300-24P スイッチ",
+  "server-rack:itemname_sisco_isr4331": "Cisco ISR 4331 ルーター",
+  "server-rack:itemname_sisco_secure3100": "Cisco Secure Firewall 3100",
+  "server-rack:itemname_tsujitsu_server": "Fujitsu PRIMERGY RX2540 M7"
+}

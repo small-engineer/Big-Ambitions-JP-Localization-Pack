@@ -6,6 +6,14 @@ Big Ambitions の複数 Mod を日本語化するための翻訳パックです�
 [list]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3741969623]IT Services[/url] — 事業タイプ、スキル、サーバー設備、料金、通知、ヘルプを日本語化します。 必須 Mod: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3795855100]SkillKit[/url]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3739934517]BizSuite[/url] — ノート、カレンダー、表計算、通知、設定、ヘルプを日本語化します。
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3800064885]8200 - OSINT Service / OSINTサービス[/url] — OSINTサービス事業、ハッカー、サーバー基盤、料金、ゲーム内ヘルプを日本語化します。 必須 Mod: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3741969623]IT Services[/url], [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3795855100]SkillKit[/url]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3800081280]Server BRANDS[/url] — サーバーラック、サーバー機器、ネットワーク機器、設備要件を日本語化します。 必須 Mod: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3741969623]IT Services[/url]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3739103628]Aluna's Trainer[/url] — 確認画面と操作結果の通知を日本語化します。
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3791292164]Auto Price Maximizer - 1.0 Compatible[/url] — 自動価格設定のオプションと操作項目を日本語化します。 必須 Mod: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3790426259]LIB BA Unified UI[/url]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3720916716]Example - Furniture[/url] — 追加家具の名称を日本語化します。
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3772394068]GAGAZON[/url] — オンライン市場の商品検索、カート、配送、定期注文画面を日本語化します。 必須 Mod: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3790426259]LIB BA Unified UI[/url]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3795832653]Smart Recruiting[/url] — 採用アドバイス、スマート採用、設定、通知、ヘルプを日本語化します。
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3797153310]Storefront Sign Display Logo[/url] — 店頭看板の表示設定を日本語化します。
 [/list]
 
 [h2]導入方法[/h2]
