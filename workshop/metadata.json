@@ -1,0 +1,36 @@
+{
+  "appId": "1331550",
+  "title": "Big Ambitions JP Localization Pack",
+  "summary": [
+    "Big Ambitions の複数 Mod を日本語化するための翻訳パックです。",
+    "対応 Mod の翻訳を一つにまとめており、各 Mod 本体は含まれていません。使用したい対応 Mod も別途サブスクライブして有効化してください。"
+  ],
+  "supportedMods": [
+    {
+      "name": "IT Services",
+      "workshopItemId": "3741969623",
+      "details": "事業タイプ、スキル、サーバー設備、料金、通知、ヘルプを日本語化します。",
+      "dependencies": [
+        {
+          "name": "SkillKit",
+          "workshopItemId": "3795855100"
+        }
+      ]
+    },
+    {
+      "name": "BizSuite",
+      "workshopItemId": "3739934517",
+      "details": "ノート、カレンダー、表計算、通知、設定、ヘルプを日本語化します。"
+    }
+  ],
+  "usage": [
+    "この翻訳パックと、利用する対応 Mod をサブスクライブします。",
+    "ゲームの Mods メニューで両方を有効にします。",
+    "ゲーム内の言語を日本語に設定します。"
+  ],
+  "notes": [
+    "対応 Mod が未導入の場合、その Mod 向けの翻訳は参照されないだけなので問題ありません。",
+    "同じ Localization Key を変更する別の翻訳 Mod とは競合し、後からロードされた値が使われます。",
+    "対応 Mod の更新直後は、新しく追加された文言の翻訳が追いついていない場合があります。"
+  ]
+}

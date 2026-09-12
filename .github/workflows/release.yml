@@ -22,7 +22,9 @@ jobs:
           ref: ${{ github.event.release.tag_name }}
 
       - name: Verify generated localization
-        run: python3 build.py --check
+        run: |
+          python3 build.py --check
+          python3 build_workshop.py --check
 
       - name: Prepare Workshop content
         env:
@@ -42,7 +44,6 @@ jobs:
 
       - name: Upload to Steam Workshop
         env:
-          APP_ID: "1331550"
           RELEASE_TAG: ${{ github.event.release.tag_name }}
           STEAMCMD_EXECUTABLE: ${{ steps.steamcmd.outputs.executable }}
           STEAM_CONFIG_VDF: ${{ secrets.STEAM_CONFIG_VDF }}
@@ -69,17 +70,12 @@ jobs:
           chmod 600 "$HOME/Steam/config/config.vdf"
           trap 'rm -f "$HOME/Steam/config/config.vdf"' EXIT
 
-          change_note=${RELEASE_TAG//\\/\\\\}
-          change_note=${change_note//\"/\\\"}
-          printf '%s\n' \
-            '"workshopitem"' \
-            '{' \
-            "  \"appid\" \"$APP_ID\"" \
-            "  \"publishedfileid\" \"$WORKSHOP_ITEM_ID\"" \
-            "  \"contentfolder\" \"$RUNNER_TEMP/workshop-content\"" \
-            "  \"previewfile\" \"$RUNNER_TEMP/workshop-content/thumbnail.png\"" \
-            "  \"changenote\" \"GitHub Release $change_note\"" \
-            '}' > "$RUNNER_TEMP/workshop.vdf"
+          python3 build_workshop.py \
+            --vdf "$RUNNER_TEMP/workshop.vdf" \
+            --published-file-id "$WORKSHOP_ITEM_ID" \
+            --content-folder "$RUNNER_TEMP/workshop-content" \
+            --preview-file "$RUNNER_TEMP/workshop-content/thumbnail.png" \
+            --change-note "GitHub Release $RELEASE_TAG"
 
           "$STEAMCMD_EXECUTABLE" \
             +@ShutdownOnFailedCommand 1 \

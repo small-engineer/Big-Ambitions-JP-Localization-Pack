@@ -6,7 +6,7 @@ PROJECT := src/BigAmbitions.JpLocalizationPack/BigAmbitions.JpLocalizationPack.c
 DLL := src/BigAmbitions.JpLocalizationPack/bin/Release/netstandard2.1/BigAmbitions.JpLocalizationPack.dll
 PACK_DIR := dist/BigAmbitionsJapanesePack
 
-.PHONY: all sync locales dll package check
+.PHONY: all sync locales workshop dll package check
 
 all: package
 
@@ -16,10 +16,13 @@ sync:
 locales: sync
 	$(PYTHON) -B build.py
 
+workshop:
+	$(PYTHON) -B build_workshop.py
+
 dll:
 	dotnet build "$(PROJECT)" -c Release "-p:BigAmbitionsManagedDir=$(MANAGED_DIR)"
 
-package: locales dll
+package: locales workshop dll
 	mkdir -p "$(PACK_DIR)/Locales"
 	cp "$(DLL)" "$(PACK_DIR)/BigAmbitions.JpLocalizationPack.dll"
 	cp Locales/ja.json "$(PACK_DIR)/Locales/ja.json"
@@ -28,6 +31,7 @@ package: locales dll
 check:
 	$(PYTHON) -B sync_workshop.py --workshop-dir "$(WORKSHOP_DIR)" --check
 	$(PYTHON) -B build.py --check
+	$(PYTHON) -B build_workshop.py --check
 	dotnet build "$(PROJECT)" -c Release --no-restore "-p:BigAmbitionsManagedDir=$(MANAGED_DIR)"
 	test -f thumbnail.png
 	test "$$(wc -c < thumbnail.png)" -le 1000000

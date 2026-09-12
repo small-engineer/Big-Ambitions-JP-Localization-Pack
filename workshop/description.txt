@@ -1,0 +1,23 @@
+[h1]Big Ambitions JP Localization Pack[/h1]
+Big Ambitions の複数 Mod を日本語化するための翻訳パックです。
+対応 Mod の翻訳を一つにまとめており、各 Mod 本体は含まれていません。使用したい対応 Mod も別途サブスクライブして有効化してください。
+
+[h2]対応 Mod[/h2]
+[list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3741969623]IT Services[/url] — 事業タイプ、スキル、サーバー設備、料金、通知、ヘルプを日本語化します。 必須 Mod: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3795855100]SkillKit[/url]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3739934517]BizSuite[/url] — ノート、カレンダー、表計算、通知、設定、ヘルプを日本語化します。
+[/list]
+
+[h2]導入方法[/h2]
+[list]
+[*]この翻訳パックと、利用する対応 Mod をサブスクライブします。
+[*]ゲームの Mods メニューで両方を有効にします。
+[*]ゲーム内の言語を日本語に設定します。
+[/list]
+
+[h2]注意事項[/h2]
+[list]
+[*]対応 Mod が未導入の場合、その Mod 向けの翻訳は参照されないだけなので問題ありません。
+[*]同じ Localization Key を変更する別の翻訳 Mod とは競合し、後からロードされた値が使われます。
+[*]対応 Mod の更新直後は、新しく追加された文言の翻訳が追いついていない場合があります。
+[/list]

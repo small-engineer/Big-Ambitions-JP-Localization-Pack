@@ -17,7 +17,11 @@ Big-Ambitions-JP-Localization-Pack/
 │       ├── BigAmbitions.JpLocalizationPack.csproj
 │       └── LocalizationPackMod.cs  # discovery 用の最小 Mod
 ├── build.py                     # 翻訳元の検証と結合
+├── build_workshop.py            # Steam 説明文・VDF生成
 ├── sync_workshop.py             # Workshop の en.json を同期
+├── workshop/
+│   ├── metadata.json            # 説明・対応Mod一覧の定義
+│   └── description.txt         # Steam向けの生成物
 └── README.md
 ```
 
@@ -55,6 +59,8 @@ make WORKSHOP_DIR="/path/to/workshop/content/1331550" \
 ```sh
 make check
 ```
+
+Steam の説明文と対応 Mod 一覧は `workshop/metadata.json` で管理します。`make workshop` で `workshop/description.txt` を生成し、Release workflow が同じ定義からタイトル・説明文を公開します。
 
 ## 翻訳を追加する
 
