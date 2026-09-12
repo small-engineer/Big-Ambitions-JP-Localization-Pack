@@ -40,7 +40,7 @@ Locales/ja.json
 dist/BigAmbitionsJapanesePack/
 ```
 
-初めて見つかったキーは英語を仮訳として追加します。`Translations/` で日本語へ書き換えた値は、その後 `make` を実行しても上書きされません。Workshop に存在しない Mod を購読・ダウンロードする処理は行わず、Steam が取得済みの Mod だけを対象にします。
+Mod に `Locales/ja.json` が同梱されていればその日本語を優先し、なければ初めて見つかったキーを英語の仮訳として追加します。`Translations/` で日本語へ書き換えた値は、その後 `make` を実行しても上書きされません。Workshop に存在しない Mod を購読・ダウンロードする処理は行わず、Steam が取得済みの Mod だけを対象にします。
 
 別の Steam Library を使う場合はパスを上書きできます。
 

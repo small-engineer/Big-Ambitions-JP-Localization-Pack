@@ -46,9 +46,14 @@ def translation_name(mod_dir: Path) -> str:
     return f"{slug or mod_dir.name}.json"
 
 
-def expected_translation(source: dict[str, str], existing: dict[str, str]) -> dict[str, str]:
+def expected_translation(
+    source: dict[str, str], bundled_ja: dict[str, str], existing: dict[str, str]
+) -> dict[str, str]:
     result = dict(source)
-    result.update(existing)
+    result.update(bundled_ja)
+    for key, value in existing.items():
+        if key not in source or value != source[key]:
+            result[key] = value
     return result
 
 
@@ -90,18 +95,29 @@ def main() -> None:
         destination_owners[destination.name] = mod_dir.name
 
         source = load_object(source_path, normalize_keys=True)
+        bundled_ja_path = mod_dir / "Locales" / "ja.json"
+        bundled_ja = (
+            load_object(bundled_ja_path, normalize_keys=True)
+            if bundled_ja_path.is_file()
+            else {}
+        )
         existing = (
             load_object(destination, normalize_keys=False) if destination.exists() else {}
         )
-        expected = expected_translation(source, existing)
+        expected = expected_translation(source, bundled_ja, existing)
         scanned += 1
 
         if expected != existing:
             changed.append(destination.name)
             if not args.check:
                 write_json(destination, expected)
+            added = len(expected.keys() - existing.keys())
+            refreshed = sum(
+                key in existing and existing[key] != value
+                for key, value in expected.items()
+            )
             print(f"{'Outdated' if args.check else 'Updated'} {destination.name}: "
-                  f"added {len(expected) - len(existing)} keys")
+                  f"added {added}, refreshed {refreshed} keys")
 
     if args.check and changed:
         raise SystemExit("Workshop translations are outdated; run: make sync")
