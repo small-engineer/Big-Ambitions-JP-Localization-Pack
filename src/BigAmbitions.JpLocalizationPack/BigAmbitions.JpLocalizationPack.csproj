@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>BigAmbitions.JpLocalizationPack</AssemblyName>
+    <RootNamespace>BigAmbitions.JpLocalizationPack</RootNamespace>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="BigAmbitions.ModAPI">
+      <HintPath>$(BigAmbitionsManagedDir)/BigAmbitions.ModAPI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="ValidateBigAmbitionsManagedDir" BeforeTargets="ResolveAssemblyReferences">
+    <Error
+      Condition="'$(BigAmbitionsManagedDir)' == ''"
+      Text="Set BigAmbitionsManagedDir to the game's Managed directory." />
+    <Error
+      Condition="'$(BigAmbitionsManagedDir)' != '' and !Exists('$(BigAmbitionsManagedDir)/BigAmbitions.ModAPI.dll')"
+      Text="BigAmbitions.ModAPI.dll was not found in BigAmbitionsManagedDir." />
+  </Target>
+</Project>
