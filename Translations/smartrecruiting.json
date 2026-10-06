@@ -97,6 +97,7 @@
   "smartrecruiting:stopped_headhunter_gone": "ヘッドハンターが計画から外れました",
   "smartrecruiting:tab_business": "ビジネス",
   "smartrecruiting:tab_business_help": "ヘッドハンターがどのビジネスに採用するか。",
+  "smartrecruiting:tab_business_help_locked": "このヘッドハンターが採用活動中の間は変更できません。別のビジネスを選ぶには採用を停止してください。",
   "smartrecruiting:tab_busy": "<b>{headhunter}</b>はすでに採用活動中です。ここで始めるとそちらは止まり、この計画が引き継ぎます。",
   "smartrecruiting:tab_complete_closed": "<b>{business}</b>は人員が揃い、シフトも週全体をカバーしています。",
   "smartrecruiting:tab_complete_skipped": "{role}はまだ{count}人足りませんが、その従業員の種類はモッド設定で採用がオフになっています。",

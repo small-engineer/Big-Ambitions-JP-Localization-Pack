@@ -99,6 +99,34 @@
       "workshopItemId": "3797153310",
       "translationFile": "storefrontsigndisplay.json",
       "details": "店頭看板の表示設定を日本語化します。"
+    },
+    {
+      "name": "Aluna's City News",
+      "workshopItemId": "3740479504",
+      "translationFile": "alunacitynews.json",
+      "details": "街の市場動向、物件、ライバル、財務を伝えるニュースを日本語化します。"
+    },
+    {
+      "name": "Voogle Route",
+      "workshopItemId": "3740623471",
+      "translationFile": "voogleroute.json",
+      "details": "経路案内、自動移動、ブックマーク、訪問履歴、設定を日本語化します。",
+      "dependencies": [
+        {
+          "name": "LIB BA Player Location",
+          "workshopItemId": "3741773276"
+        },
+        {
+          "name": "LIB BA Unified UI",
+          "workshopItemId": "3790426259"
+        }
+      ]
+    },
+    {
+      "name": "Camera Tools",
+      "workshopItemId": "3743579410",
+      "translationFile": "cameratools.json",
+      "details": "カメラ、ズーム、霧、UI表示、ショートカットの設定を日本語化します。"
     }
   ],
   "usage": [
